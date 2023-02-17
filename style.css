@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+
+
+.container-fluid{
+
+    font-family: 'Comfortaa', serif;
+}
 
 
 .allsite{
-    background-color: rgb(197, 196, 196);
+    background: rgb(10,6,80);
+    background: linear-gradient(135deg, rgba(10,6,80,1) 0%, rgba(102,164,129,1) 47%, rgba(2,163,195,1) 99%);
     font-family: 'Comfortaa', serif;
+}
+
+.h2title{
+    color: white;
+    font-family: 'Archivo Black', serif;
+    font-size: 42px;
+    font-weight: 200;
+    margin: 10px;
+
 }
 
 .card{
@@ -17,4 +34,9 @@
 }
 .card-text{
     font-size: 14px;
+}
+
+.card-img-top{
+    width: 200x;
+    height: 100px;
 }

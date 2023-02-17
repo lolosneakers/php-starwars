@@ -2,8 +2,6 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=starwars', 'root', 'root');
 
-$result = $bdd->query("DELETE FROM planets");
-
 
 ?>
 <!DOCTYPE html> 
@@ -27,13 +25,13 @@ $result = $bdd->query("DELETE FROM planets");
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Planete Aléatoire</a>
+          <a class="nav-link" href="?planete='random'">Planete Aléatoire</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Espece Aléatoire</a>
+          <a class="nav-link" href="?espece='random'">Espece Aléatoire</a>
         </li>
       </ul>
       <span class="navbar-text">
@@ -49,7 +47,9 @@ $result = $bdd->query("DELETE FROM planets");
     <div class="planet">
         <div class="container text-center">
             <br>
-            <h2>Planètes</h2>
+            <div class="h2title">
+              <h1>PLANÈTES 🪐</h1>
+            </div>
             <br>
         <div class="row">
 
@@ -57,7 +57,7 @@ $result = $bdd->query("DELETE FROM planets");
 
         // FETCH API PLANET 
 
-        for ($i=1; $i <= 2; $i++) { //6 D'ORIGINE
+        for ($i=1; $i <= 4; $i++) { //6 D'ORIGINE
 
             $url_planet = "https://swapi.dev/api/planets/?page=".$i; 
             $ch = curl_init();  
@@ -75,12 +75,12 @@ $result = $bdd->query("DELETE FROM planets");
                 ?> 
                 <div class="col">
             <div class="card">
-                <img src="https://img.planete-starwars.com/upload/databank/75964-jedha.png" class="card-img-top" alt="Photo de la planete">
+                <img src="img/<?php print $planete['name'];?>.jpeg" class="card-img-top" alt="Photo de la planete">
                 <div class="card-body">
                      <h5 class="card-title"><?php print $planete["name"]; ?></h5>
                      <p class="card-text"> Diamètre : <?php print $planete["diameter"];?> km3 <br>
                      Population : <?php print $planete["population"];?>.</p>
-                     <a href="#" class="btn btn-primary">En savoir plus</a>
+                     <a href="/img/<?php $planete["name"] ?>.jpeg" class="btn btn-primary">En savoir plus</a>
                 </div>
             </div>
             </div>
@@ -94,7 +94,9 @@ $result = $bdd->query("DELETE FROM planets");
 
     <div class="espece">
         <div class="container text-center">
-            <h2>Espèces</h2>
+            <div class="h2title">
+              <h2>ESPÈCES 🧟</h2>
+            </div>
             <br>
         <div class="row">
            <?php 
@@ -138,7 +140,9 @@ $result = $bdd->query("DELETE FROM planets");
 
     <div class="film">
         <div class="container text-center">
-            <h2>Films</h2>
+            <div class="h2title">
+              <h2>FILMS 🎬</h2>
+            </div>
             <br>
         <div class="row">
             <?php 
@@ -181,7 +185,6 @@ $result = $bdd->query("DELETE FROM planets");
     </div>
     </div>
 
-    <br>
     
 
   </body>
