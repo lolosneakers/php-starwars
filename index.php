@@ -48,6 +48,7 @@ $result = $bdd->query("DELETE FROM planets");
 <br>
     <div class="planet">
         <div class="container text-center">
+            <br>
             <h2>Planètes</h2>
             <br>
         <div class="row">
@@ -74,7 +75,7 @@ $result = $bdd->query("DELETE FROM planets");
                 ?> 
                 <div class="col">
             <div class="card">
-                <img src="..." class="card-img-top" alt="Photo de la planete">
+                <img src="https://img.planete-starwars.com/upload/databank/75964-jedha.png" class="card-img-top" alt="Photo de la planete">
                 <div class="card-body">
                      <h5 class="card-title"><?php print $planete["name"]; ?></h5>
                      <p class="card-text"> Diamètre : <?php print $planete["diameter"];?> km3 <br>
@@ -117,8 +118,8 @@ $result = $bdd->query("DELETE FROM planets");
 
                 ?> 
                 <div class="col">
-            <div class="card" style="width: 15rem;">
-                <img src="..." class="card-img-top" alt="Photo de l'espece">
+            <div class="card">
+                <img src="https://static.tvtropes.org/pmwiki/pub/images/the_mandalorian_1.jpg" class="card-img-top" alt="Photo de l'espece">
                 <div class="card-body">
                      <h5 class="card-title"><?php print $espece["name"]; ?></h5>
                      <p class="card-text"> Type : <?php print $espece["classification"];?>.<br>
@@ -161,7 +162,7 @@ $result = $bdd->query("DELETE FROM planets");
 
                 ?> 
                 <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card">
                 <img src="..." class="card-img-top" alt="Photo de l'espece">
                 <div class="card-body">
                      <h5 class="card-title"><?php print $film["title"]; ?></h5>
